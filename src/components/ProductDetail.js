@@ -1,10 +1,11 @@
 import React from "react";
+import Reviews from './Reviews'
 
 function ProductDetail(props) {
   const {name,description,rating,imgUrl} = props.product;
   const stars = [];
   for (let i = 0; i < rating; i++) {
-    stars.push(<span className="glyphicon glyphicon-star" />);
+    stars.push(<span key={i} className="glyphicon glyphicon-star" />);
   }
 
   return (
@@ -18,9 +19,10 @@ function ProductDetail(props) {
           </p>
         </div>
         <div className="ratings">
-          <p className="pull-right">15 reviews</p>
+          <p className="pull-right">{props.product.reviews.length} Reviews</p>
+          <Reviews product={props.product}/>
           <p>
-            {stars}
+            Ratings: {stars}
           </p>
         </div>
       </div>
