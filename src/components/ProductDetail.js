@@ -22,7 +22,7 @@ function ProductDetail(props) {
           <p className="pull-right">{props.product.reviews.length} Reviews</p>
           <Reviews product={props.product}/>
           <p>
-            Ratings: {stars}
+            Ratings: {this.state.stars}
           </p>
         </div>
       </div>
